@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐 먹지 AI - 메뉴 추천</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">오늘 뭐 먹지 AI</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">메뉴 추천</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main class="menu-page">
+
+    <section class="menu-header">
+        <h1>오늘 뭐 먹을까요?</h1>
+
+        <p>
+            몇 가지 조건만 알려주세요.<br>
+            AI가 오늘 먹기 좋은 한 상을 골라드립니다.
+        </p>
+    </section>
+
+
+    <section class="recommend-form-section">
+
+        <form id="recommend-form" novalidate>
+
+            <div class="form-group">
+                <label for="people">누구와 먹나요?</label>
+
+                <select id="people" required>
+                    <option value="">선택해주세요</option>
+                    <option value="혼자">혼자</option>
+                    <option value="부부">부부</option>
+                    <option value="가족">가족</option>
+                    <option value="친구">친구</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="situation">오늘 식사 분위기</label>
+
+                <select id="situation" required>
+                    <option value="">선택해주세요</option>
+                    <option value="평범한 식사">평범한 식사</option>
+                    <option value="술 한잔">술 한잔</option>
+                    <option value="특별한 저녁">특별한 저녁</option>
+                    <option value="간단하게">간단하게</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="food-type">음식 종류</label>
+
+                <select id="food-type">
+                    <option value="상관없음">상관없음</option>
+                    <option value="한식">한식</option>
+                    <option value="중식">중식</option>
+                    <option value="일식">일식</option>
+                    <option value="양식">양식</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="cook-time">조리 가능 시간</label>
+
+                <select id="cook-time">
+                    <option value="20분 이내">20분 이내</option>
+                    <option value="40분 이내">40분 이내</option>
+                    <option value="1시간 이내">1시간 이내</option>
+                    <option value="상관없음">시간 상관없음</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="taste">오늘 당기는 느낌</label>
+
+                <select id="taste">
+                    <option value="아무거나">아무거나</option>
+                    <option value="고기">고기</option>
+                    <option value="국물">국물</option>
+                    <option value="매콤">매콤</option>
+                    <option value="담백">담백</option>
+                    <option value="면">면</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="alcohol">술</label>
+
+                <select id="alcohol">
+                    <option value="안 마심">안 마심</option>
+                    <option value="소주">소주</option>
+                    <option value="맥주">맥주</option>
+                    <option value="와인">와인</option>
+                    <option value="막걸리">막걸리</option>
+                    <option value="상관없음">상관없음</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="ingredients">
+                    집에 있는 재료
+                    <span class="optional">선택</span>
+                </label>
+
+                <textarea
+                    id="ingredients"
+                    rows="4"
+                    placeholder="예: 돼지고기, 두부, 김치, 대파"
+                ></textarea>
+            </div>
+
+
+            <button type="submit" id="recommend-button">
+                오늘 메뉴 골라줘
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section id="loading" class="hidden">
+        <p>🍳 AI가 오늘의 메뉴를 고민하고 있어요...</p>
+    </section>
+
+
+    <section id="error-message" class="hidden">
+    </section>
+
+
+    <section id="recommend-result" class="hidden">
+
+        <h2>🍽️ 오늘의 추천 한상</h2>
+
+        <div id="pick-container">
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/menu.js"></script>
+
+</body>
+</html>
