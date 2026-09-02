@@ -34,6 +34,10 @@ class MenuRequest(BaseModel):
 def home():
     return FileResponse(BASE_DIR / "index.html")
 
+@app.get("/index.html")
+def home_page():
+    return FileResponse(BASE_DIR / "index.html")
+
 
 @app.get("/menu.html")
 def menu_page():
