@@ -110,11 +110,27 @@ function displayPicks(picks) {
         card.classList.add("pick-card");
 
 
-        const menuItems = pick.menus
-            .map(function (menu) {
-                return `<li>🍴 ${menu}</li>`;
-            })
-            .join("");
+const menuItems = pick.menus
+    .map(function (menu) {
+        const recipeUrl =
+            "https://search.naver.com/search.naver?query=" +
+            encodeURIComponent(menu + " 레시피");
+
+        return `
+            <li class="menu-item">
+                <span>🍴 ${menu}</span>
+                <a
+                    class="recipe-button"
+                    href="${recipeUrl}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    🔍 레시피 검색
+                </a>
+            </li>
+        `;
+    })
+    .join("");
 
 
         card.innerHTML = `

@@ -588,3 +588,44 @@ textarea {
         padding: 55px 20px;
     }
 }
+
+/* 레시피 검색 */
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.recipe-button {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 7px 12px;
+    border: 1px solid #ff8a3d;
+    border-radius: 20px;
+    color: #e96b17;
+    background: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.recipe-button:hover {
+    background: #ff8a3d;
+    color: #fff;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+    .menu-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .recipe-button {
+        margin-left: 24px;
+    }
+}
